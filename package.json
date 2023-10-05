@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "risk-management2/node_modules/.bin/vite",
-    "build": "risk-management2/node_modules/.bin/vite build",
-    "preview": "risk-management2/node_modules/.bin/vite preview",
-    "lint": "risk-management2/node_modules/.bin/eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "risk-management2/node_modules/.bin/prettier --write ../src/"
+    "dev": "vite/node_modules/.bin/vite",
+    "build": "vite/node_modules/.bin/vite build",
+    "preview": "vite/node_modules/.bin/vite preview",
+    "lint": "vite/node_modules/.bin/eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "vite/node_modules/.bin/prettier --write ../src/"
   },
   "dependencies": {
     "pinia": "^2.1.6",
