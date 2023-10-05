@@ -1,0 +1,63 @@
+@import 'base.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: #fafafa;
+    padding: 50px 0;
+}
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0px 21px 41px -13px rgba(0, 0, 0, 0.18);
+}
+.app-form {
+    padding: 30px;
+}
+input {
+    border-bottom: 1px solid;
+    border-color: #eaeaea;
+}
+input::placeholder {
+    font-size: 13px;
+    text-transform: none;
+}
+input.field-search::placeholder {
+    font-size: 16px;
+    text-transform: none;
+}
+input:focus-visible {
+    outline: 0;
+}
+input:focus:not(.field-search),
+input:active:not(.field-search) {
+    /*border-bottom: 1px solid #01d28e;*/
+}
+input[readonly] {
+    cursor: auto;
+}
+input[readonly]:focus {
+    border-bottom: 1px solid #eaeaea;
+}
+.field-title {
+    font-size: 10px;
+}
+.btn-clear {
+    background: #cc2132;
+}
+.btn-save {
+    background: #0da372;
+}
+.tokens-list {
+    /*background: #1d4889;*/
+    padding: 30px;
+    border-left: 1px solid;
+}
+.token-item {
+    border-width: 1px;
+    display: none;
+    overflow-y: auto;
+}
