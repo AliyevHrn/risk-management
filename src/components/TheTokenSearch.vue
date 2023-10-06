@@ -1,6 +1,6 @@
 <script setup>
-import TheInput from "src/components/TheInput.vue";
-import {typeOnlyLetters} from "src/functions";
+import TheInput from "./TheInput.vue";
+import {typeOnlyLetters} from "../functions";
 </script>
 
 <template>

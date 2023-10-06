@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite/node_modules/.bin/vite",
-    "build": "vite/node_modules/.bin/vite build",
-    "preview": "vite/node_modules/.bin/vite preview",
-    "lint": "vite/node_modules/.bin/eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "vite/node_modules/.bin/prettier --write ../src/"
+    "dev": "./node_modules/.bin/vite",
+    "build": "./node_modules/.bin/vite build",
+    "preview": "./node_modules/.bin/vite preview",
+    "lint": "./node_modules/.bin/eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "./node_modules/.bin/prettier --write ../src/"
   },
   "dependencies": {
     "pinia": "^2.1.6",

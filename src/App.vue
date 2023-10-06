@@ -1,10 +1,10 @@
 <script setup>
-import TheHeader from "src/components/TheHeader.vue";
-import TheFieldsGrid from "src/components/TheFieldsGrid.vue";
-import TheTokensList from "src/components/TheTokensList.vue";
-import {tokensListHeight} from "src/functions";
+import TheHeader from "./components/TheHeader.vue";
+import TheFieldsGrid from "./components/TheFieldsGrid.vue";
+import TheTokensList from "./components/TheTokensList.vue";
+import {tokensListHeight} from "./functions";
 
-tokensListHeight();
+// tokensListHeight();
 
 </script>
 

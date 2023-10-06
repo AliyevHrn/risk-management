@@ -1,9 +1,9 @@
 <script setup>
-import TheTokenItem from "src/components/TheTokenItem.vue";
+import TheTokenItem from "./TheTokenItem.vue";
 import {ref} from "vue";
-import { getData } from "src/api/api";
-import {priceChangeBorderColor, searchToken, toFixedNumber, tokensListHeight} from "src/functions";
-import TheTokenSearch from "src/components/TheTokenSearch.vue";
+import { getData } from "../api/api";
+import {priceChangeBorderColor, searchToken, toFixedNumber} from "../functions";
+import TheTokenSearch from "./TheTokenSearch.vue";
 
 let result = ref(null);
 setInterval(async () => {

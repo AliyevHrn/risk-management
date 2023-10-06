@@ -1,6 +1,5 @@
 <script setup>
-import TheTokenSearch from "src/components/TheTokenSearch.vue";
-import TheLogo from "src/components/TheLogo.vue";
+import TheLogo from "./TheLogo.vue";
 </script>
 
 <template>

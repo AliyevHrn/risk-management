@@ -1,5 +1,5 @@
 <script setup>
-import TheInput from "src/components/TheInput.vue";
+import TheInput from "./TheInput.vue";
 defineProps({
     'id': String,
     'title': String,

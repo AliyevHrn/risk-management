@@ -1,4 +1,4 @@
-import {apikey, apiurl} from "src/constants";
+import {apikey, apiurl} from "../constants";
 
 export async function getData() {
     const response = await fetch(apiurl);

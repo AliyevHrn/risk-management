@@ -1,7 +1,7 @@
 <script setup>
-import TheFieldsItem from "src/components/TheFieldsItem.vue";
-import TheButton from "src/components/TheButton.vue";
-import { setFieldValue, clearForm, saveOrder, setTakeProfit, setStopLoss, typeOnlyNumbers, typeOnlyLetters } from "src/functions";
+import TheFieldsItem from "./TheFieldsItem.vue";
+import TheButton from "./TheButton.vue";
+import { setFieldValue, clearForm, saveOrder, setTakeProfit, setStopLoss, typeOnlyNumbers, typeOnlyLetters } from "../functions";
 
 
 </script>
