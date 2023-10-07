@@ -1,3 +1,5 @@
+import {getData} from "./api/api";
+import {ref} from "vue";
 
 export function setFieldValue() {
     let fieldPriceValue = Number(document.querySelector('#field-price').value);
@@ -64,20 +66,17 @@ export function typeOnlyNumbers(event) {
     const regexp = /^(0|[1-9]\d*)([.,]\d+)?/;
     if(!regexp.test(event.target.value)) {
         event.target.value = event.target.value.slice(0, -1);
-        event.target.style.borderColor = '#cc2132';
+        event.target.style.borderColor = '#ec2d40';
     } else {
         event.target.style.borderColor = '#0da372';
     }
 }
-export function typeOnlyLetters(event) {
-    const regexp = /^([a-zа-яё]+)$/gi;
-    if(!regexp.test(event.target.value)) {
-        event.target.value = event.target.value.slice(0, -1);
-        // event.target.style.borderColor = '#cc2132';
-    } else {
-        // event.target.style.borderColor = '#0da372';
-    }
-}
+// export function typeOnlyLetters(event) {
+//     const regexp = /^([a-zа-яё]+)$/gi;
+//     if(!regexp.test(event.target.value)) {
+//         event.target.value = event.target.value.slice(0, -1);
+//     }
+// }
 export function toFixedNumber(number, numberCount) {
     return Number(number).toFixed(numberCount);
 }
@@ -88,33 +87,42 @@ export function priceChangeBorderColor() {
         const percentPrice = Number(item.dataset.pricechange);
         if(percentPrice >= 0) {
             item.style.borderColor = '#0da372';
+            item.querySelector('.token-item__percent').style.background = '#0da372';
         } else if(percentPrice < 0){
-            item.style.borderColor = '#cc2132';
+            item.style.borderColor = '#ec2d40';
+            item.querySelector('.token-item__percent').style.background = '#ec2d40';
         }
     })
 
 }
 
-export function searchToken(event) {
-    let fieldsItems = document.querySelectorAll('.token-item');
-    let arrFieldsItems = Array.from(fieldsItems);
-    let fullName = '';
-    fullName = fullName + event.target.value.toLowerCase();
-    arrFieldsItems.map(item => {
-        let itemName = item.querySelector('.token-item__title').innerText.toLowerCase();
-        if(itemName.includes(fullName)) {
-            item.style.display = 'flex';
-        } else {
-            item.style.display = 'none';
-        }
-    })
-    if(event.key, event.target.value === '') {
-        arrFieldsItems.map(item => item.style.display = 'none');
+export function searchToken(event, result) {
+    let tickerName = event.target.value.toUpperCase();
+    let fieldSearch = document.querySelector('.field-search');
+    let flag = result.every(el => el.FROMSYMBOL !== tickerName);
+
+    if(flag) {
+        setTimeout(async () => {
+            let data = await getData(tickerName);
+            result.push(data);
+            fieldSearch.value = '';
+            return result;
+        }, 0);
     }
+    return false;
 }
 
 export function tokensListHeight() {
     let appFormHeight = document.querySelector('.app-form').offsetHeight;
     let tokensList = document.querySelector('.tokens-list');
-    tokensList.offsetHeight = appFormHeight;
+    tokensList.style.height = `${appFormHeight}px`;
+}
+
+export function scrollTokensList(event) {
+    let topElem = document.querySelector('.sticky-to-top');
+    if(event.target.scrollTop > 60) {
+        topElem.style.display = 'block';
+    } else {
+        topElem.style.display = 'none';
+    }
 }

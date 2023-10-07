@@ -1,2 +1,2 @@
-export const apikey = '1fa07ae2-92d4-4796-908c-44369294f970';
-export const apiurl = 'https://api.coincap.io/v2/assets';
+export const apikey = '44629261713911410ac1c0ed2f2d689d2bc33950e74d2558fd4e7545ea6066f6';
+export const apiurl_fulldata = 'https://min-api.cryptocompare.com/data/pricemultifull?'

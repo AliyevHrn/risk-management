@@ -46,18 +46,49 @@ input[readonly]:focus {
     font-size: 10px;
 }
 .btn-clear {
-    background: #cc2132;
+    background: #ec2d40;
 }
 .btn-save {
     background: #0da372;
 }
 .tokens-list {
-    /*background: #1d4889;*/
+    position: relative;
     padding: 30px;
     border-left: 1px solid;
+    overflow-y: auto;
+}
+.tokens-list .sticky-to-top {
+    position: sticky;
+    top: -30px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    height: 30px;
+}
+.tokens-list .sticky-to-bottom {
+    position: sticky;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    height: 30px;
+    display: block;
 }
 .token-item {
     border-width: 1px;
-    display: none;
+    /*display: none;*/
     overflow-y: auto;
+}
+.token-item__percent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 90px;
+    height: 100%;
+    color: white;
+    border-radius: 100px;
+    font-weight: 600;
+    margin-left: 15px;
 }

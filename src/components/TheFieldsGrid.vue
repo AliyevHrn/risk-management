@@ -1,20 +1,13 @@
 <script setup>
 import TheFieldsItem from "./TheFieldsItem.vue";
 import TheButton from "./TheButton.vue";
-import { setFieldValue, clearForm, saveOrder, setTakeProfit, setStopLoss, typeOnlyNumbers, typeOnlyLetters } from "../functions";
+import { setFieldValue, clearForm, saveOrder, setTakeProfit, setStopLoss, typeOnlyNumbers } from "../functions";
 
 
 </script>
 
 <template>
-<!--  <div class="pt-10">-->
-<!--    <TheFieldsItem-->
-<!--        id="field-search-token"-->
-<!--        title="Найти токен"-->
-<!--        placeholder="Введите название"-->
-<!--        @keyup="typeOnlyLetters($event)"-->
-<!--    />-->
-<!--  </div>-->
+
   <div class="grid grid-cols-2 gap-3 pt-10">
     <TheFieldsItem
         id="field-price"

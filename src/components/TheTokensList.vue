@@ -1,29 +1,27 @@
 <script setup>
 import TheTokenItem from "./TheTokenItem.vue";
-import {ref} from "vue";
-import { getData } from "../api/api";
 import {priceChangeBorderColor, searchToken, toFixedNumber} from "../functions";
 import TheTokenSearch from "./TheTokenSearch.vue";
+import {ref, onUpdated} from "vue";
+const result = ref([]);
 
-let result = ref(null);
-setInterval(async () => {
-  result.value = await getData();
+onUpdated(() => {
   priceChangeBorderColor();
   return result;
-}, 1000);
-
+})
+console.log(result);
 </script>
 
 
 <template>
   <div>
-    <TheTokenSearch @keyup="searchToken($event)"/>
-    <TheTokenItem v-for="item in result" :key="item.id" :percentage24hr="item.changePercent24Hr">
-        <span class="token-item__title">{{ item.symbol }}</span>
-        <div>
-          <span>${{ toFixedNumber(item.priceUsd, 4) }}</span>
-          <span class="pl-5">{{ toFixedNumber(item.changePercent24Hr, 2) }}%</span>
-        </div>
+    <span class="sticky-to-top"></span>
+    <TheTokenSearch @keyup.enter="searchToken($event, result)"/>
+    <TheTokenItem v-for="item in result" :key="item.FROMSYMBOL" :percentage24hr="item.CHANGEPCT24HOUR">
+        <span class="token-item__title grow">{{ item.FROMSYMBOL }}</span>
+        <span>${{ toFixedNumber(item.PRICE, 4) }}</span>
+        <span class="token-item__percent">{{ toFixedNumber(item.CHANGEPCT24HOUR, 2) }}%</span>
     </TheTokenItem>
+    <span class="sticky-to-bottom"></span>
   </div>
 </template>
