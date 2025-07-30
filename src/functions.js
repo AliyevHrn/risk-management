@@ -1,12 +1,13 @@
 
 export function setFieldValue() {
     let fieldPriceValue = Number(document.querySelector('#field-price').value);
-    let fieldCountValue = Number(document.querySelector('#field-count').value);
-    let fieldOrderSum = document.querySelector('#field-order-sum');
+    let fieldOrderSum = Number(document.querySelector('#field-order-sum').value);
+    let fieldCountValue = document.querySelector('#field-count');
+
 
     if(fieldPriceValue) {
-        if(fieldCountValue) {
-            fieldOrderSum.value = toFixedNumber(fieldPriceValue * fieldCountValue, 4);
+        if(fieldOrderSum) {
+            fieldCountValue.value = toFixedNumber((fieldOrderSum - (fieldOrderSum * 0.001)) / fieldPriceValue, 3);
         }
     }
     setTakeProfit();

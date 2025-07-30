@@ -24,18 +24,18 @@ import { setFieldValue, clearForm, saveOrder, setTakeProfit, setStopLoss, typeOn
         @keyup="typeOnlyNumbers($event)"
     />
     <TheFieldsItem
-        id="field-count"
-        title="Количество"
-        placeholder="Введите число"
+        id="field-order-sum"
+        title="Сумма сделки"
+        placeholder="Введите сумму сделки"
         @change="setFieldValue()"
         @keyup="typeOnlyNumbers($event)"
     />
   </div>
   <div>
     <TheFieldsItem
-        id="field-order-sum"
-        title="Сумма сделки"
-        placeholder="Введите сумму сделки"
+        id="field-count"
+        title="Количество"
+        placeholder="Введите число"
         @change="setFieldValue()"
         @keyup="typeOnlyNumbers($event)"
     />

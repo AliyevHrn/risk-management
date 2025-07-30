@@ -52,9 +52,8 @@ input[readonly]:focus {
     background: #0da372;
 }
 .tokens-list {
-    /*background: #1d4889;*/
     padding: 30px;
-    border-left: 1px solid;
+    border-left: 1px solid #e5e7eb;
 }
 .token-item {
     border-width: 1px;
